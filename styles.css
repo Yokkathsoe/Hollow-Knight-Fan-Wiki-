@@ -12,26 +12,7 @@ body {
   line-height: 1.6;
 }
 
-#gif {
-  display: block;         /* Make the image a block element */
-  margin: 0 auto; 
-  margin-top: 30px;
-  width: 400px;
-  height: 350px;
-  box-shadow: 4px 4px 10px 2px rgba(139, 0, 0, 0.7);  /* Dark red */
-}
 
-#below {
-    text-align: center;
-    font-size: 1.4rem;
-}
-
-#divider_main {
-  width: 20%; /* Stretch divider to full width */
-  height: auto;
-  margin: 0 auto; /* Margin to separate it from other content */
-  display: block;
-}
 /* Header */
 header {
   display: flex;
@@ -55,6 +36,7 @@ header .logo img {
 header .logo img:hover {
   transform: scale(1.05);  /* Slight zoom */
 }
+
 
 /* Navigation */
 nav ul {
@@ -101,17 +83,14 @@ h1 {
   width: 100%; /* Full-width banner */
   background-color: #333; /* Fallback color in case the image doesn't load */
   overflow: hidden;
-  margin-bottom: 0;
+  margin-bottom: 40px;
 }
 
 .banner img {
   width: 100%; /* Scale to fit the full width */
   height: 100%; /* Scale to fit the height */
   object-fit: cover; /* Maintain aspect ratio and fill the container */
-  opacity: 100; /* Add transparency */
-  position: absolute; /* Ensure the image stays fixed */
-  top: 0; /* Align image to the top */
-  left: 0; /* Align image to the left */
+  opacity: 0.7; /* Add transparency */
 }
 
 .banner-overlay {
@@ -120,22 +99,13 @@ h1 {
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.7) 100%);
-  z-index: 1; /* Keeps the overlay above the image */
 }
+
 
 /* Character Info Section */
 .character-info {
-  padding: 60px 20px;
-  background-color: transparent; /* Dark background for the character section */
-  color: #333;
-  margin-top: -50px; /* This makes the character-info section overlap the banner */
-  position: relative;
-  z-index: 2; /* Ensures the section stays below the overlay */
-  /* Add a gradient at the top for the transparent effect */
-  background: linear-gradient(to top, rgba(0, 0, 0, 0) 0%, #1a1a1a 50%);
-  /* This creates a fade from transparent to the section background color */
-  margin-bottom: -120px;
+  padding: 40px;
+  margin-bottom: -160px;
 }
 
 .character-details {
@@ -212,12 +182,11 @@ h1 {
 }
 /* Cardboard Style for Abilities */
 .accordion .ability {
-  background: linear-gradient(to bottom right, #383838, #30224b);
-  color: #f8f8ff;
-  box-shadow: 4px 4px 10px rgba(100, 50, 200, 0.5), -4px -4px 10px rgba(255, 255, 255, 0.2);
+  background: #757575;  /* Light cardboard background */
   padding: 60px;
   margin-bottom: 15px;
   border-radius: 8px;  /* Slightly rounded corners */
+  box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.1), -4px -4px 6px rgba(255, 255, 255, 0.3);  /* Shadow to mimic cardboard */
   width: 300px;  /* Make the cards square (width = height) */
   height: 300px;
   position: relative;
@@ -236,8 +205,9 @@ h1 {
 /* Ability Title */
 .accordion .ability-title {
   font-size: 1.8rem;
+  font-weight: bold;
   margin-bottom: 10px;
-  color: #ffffff;  /* Dark text for the title */
+  color: #000000;  /* Dark text for the title */
 }
 
 /* Ability Description (Hidden until hover) */
@@ -284,40 +254,20 @@ h1 {
   font-size: 1rem;
 }
 
-/* Styling the Image (always visible) */
+/* Styling the Image */
 .accordion .ability img {
-  width: 120px;
-  height: 120px;
+  width: 100px;
+  height: 100px;
   object-fit: contain;
   margin-bottom: 15px;
   display: block;
   margin: 0 auto;
-  position: relative; /* Make it part of the main layout */
-  z-index: 1; /* Ensure it stays above the background */
-  transition: transform 0.3s ease-in-out; /* Add hover effect */
-}
-
-/* Add a hover effect for the image */
-.accordion .ability:hover img {
-  transform: scale(1.1); /* Slightly enlarge the image on hover */
-}
-
-/* Ensure Ability Details overlay doesn't hide the image */
-.accordion .ability-details {
-  z-index: 2; /* Details overlay remains on top of the background */
 }
 
 .accordion .ability-title {
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-#pa_center {
-    text-align: center;
-    max-width: 700px;
-    margin-left: 160px;
-    font-size: 1.4rem;
 }
 
 /* Footer Base Styling */
@@ -356,7 +306,6 @@ footer ss{
     object-fit: contain;
 }
 
-/* DELETED
 .social-links ul {
     list-style: none;
     padding: 0;
@@ -376,9 +325,8 @@ footer ss{
 }
 
 .social-links ul li a:hover {
-    color: #003bff;  Highlight link on hover 
+    color: #003bff; /* Highlight link on hover */
 }
-*/
 
 footer p {
     margin-top: 10px;
@@ -534,6 +482,12 @@ footer p {
 
 #mons_heading { 
   text-align: center;
+}
+#misc_heading {
+    text-align: center
+}
+#gp_heading{
+    text-align: center
 }
 
 .lore-section .general-lore #first {
@@ -712,128 +666,39 @@ footer p {
   background-color: #ffcc00; /* Highlight color for active or hovered dots */
   transform: scale(1.2); /* Slightly enlarge the dot */
 }
-
-/* Community Section */
-.community-container {
-  padding: 40px 20px;
-  text-align: center;
-  background-color: transparent;
-}
-
-.community-container h2 {
-  font-size: 2rem;
-  margin-bottom: 20px;
-}
-
-.community-container p {
-  font-size: 1.2rem;
-  margin-bottom: 30px;
-}
-
-/* Community Links (container for all the links) */
-.community-links {
-  display: flex;
-  justify-content: center;
-  gap: 40px;
-  flex-wrap: wrap;
-  margin-top: 20px;
-}
-
-.community-link {
-  display: block;
-  text-align: center;
-  text-decoration: none;
-  color: #333;
-  background-color: #454545;
+.content-box {
+  max-width: 400px;
+  margin: 20px auto;
   padding: 20px;
-  width: 150px;
+  border: 2px solid #fff; /* Green border */
   border-radius: 10px;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-color: #4c4c4c; /* Light gray background */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
 }
 
-.community-link img {
-  width: 60px;
-  height: 60px;
-  margin-bottom: 0px;
-}
-
-.community-link span {
-  display: block;
-  font-size: 1rem;
-  font-weight: bold;
-}
-
-/* Hover Effects for Links */
-.community-link:hover {
-  background-color: #166193; /* Blue background on hover */
-  color: #fff; /* Change text color to white */
-  transform: scale(1.3); /* Slightly enlarge the card on hover */
-  box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.2); /* Deeper shadow on hover */
-}
-/* Responsive Styles for Smaller Screens */
-@media (max-width: 768px) {
-  .community-links {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .community-link {
-    width: 100%;
-    margin-bottom: 20px;
-  }
-}
-
-/* Fake Download Links Section */
-.fake-download-links {
-  display: flex;
-  justify-content: center;
-  gap: 40px;
-  flex-wrap: wrap;
-  margin-top: 40px;
-}
-
-/* Keeping your original cardboard style for download links */
-.download-link {
-  text-decoration: none;
-  color: inherit;
-}
-
-/* Cardboard Style */
-.cardboard_download {
-  background:  #333;
-  padding: 20px;
-  border-radius: 15px;
-  transition: box-shadow 0.3s ease-in-out, transform 0.2s ease-in-out;
-  width: 200px; /* Consistent width */
-  height: 130px; /* Consistent height */
+.content-box h1 {
+  font-size: 24px;
+  margin-bottom: 15px;
+  color: #fff; /* Dark text */
   text-align: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  box-sizing: border-box; /* Ensures padding doesn't affect width/height */
 }
 
-/* Title for Cardboard */
-.cardboard_download p {
-  font-size: 1.3rem;
-  margin-bottom: 10px;
-  color: #ffffff;
-  flex-shrink: 0; /* Prevent shrinking */
+.content-box ul {
+  list-style-type: none; /* Removes default bullet points */
+  padding: 0;
 }
 
-/* Hover Effect (same as original) */
-.cardboard_download:hover {
-  background: #4b4a4a;
-  transform: scale(1.05);
+.content-box li {
+  margin: 10px 0;
 }
 
-.cardboard_download img {
-  width: 40px;
-  height: 40px;
-  margin-bottom: 0px;
-}
+.content-box a {
+  text-decoration: none; /* Removes underline */
+  color: #fff; /* Green text */
+  font-weight: bold;
+  transition
+
+
 
 
 
